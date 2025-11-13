@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Password Strength Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="checker-container">
+        <h1 class="text-2xl font-bold text-center mb-6 text-green-400">Password Strength Analyzer (Live)</h1>
+        <p class="text-sm text-gray-400 mb-4">
+            This Password Strength checker how your strong your password.
+        </p>
+
+        <div class="mb-6">
+            <input type="text" id="passwordInput" placeholder="Enter your password" class="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" onkeyup="checkPassword()">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-2 text-gray-300">Strength Score: <span id="strengthText" class="font-semibold text-yellow-400">N/A</span></label>
+            <div class="w-full bg-gray-600 rounded-full meter-bar-bg">
+                <div id="strengthMeter" class="meter-bar" style="width: 0%; background-color: #ef4444;"></div>
+            </div>
+        </div>
+
+        <div id="feedbackArea" class="mt-6">
+            <h2 class="text-lg font-semibold mb-3 text-green-400">Evaluation Criteria:</h2>
+            <p class="text-sm text-gray-500">Start typing to see the analysis!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = checkPassword;
+    </script>
+
+</body>
+</html>
